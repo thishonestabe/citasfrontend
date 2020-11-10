@@ -9,9 +9,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {MatIconModule} from '@angular/material/icon';
 
 const appRoutes: Routes = [
-  { path: '', component: DashboardComponent},
+  { path: '', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'clients', component: ClientsComponent},
   { path: 'appointments', component: AppointmentsComponent},
 
@@ -22,14 +29,19 @@ const appRoutes: Routes = [
     AppComponent,
     ClientsComponent,
     AppointmentsComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
